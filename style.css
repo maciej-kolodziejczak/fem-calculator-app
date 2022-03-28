@@ -1,0 +1,384 @@
+/* #region Reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* #endregion */
+
+/* #region properties */
+:root {
+  
+}
+/* #endregion */
+
+/* #region Themes */
+/* #region Dark theme */
+.theme-dark {
+  --c-logo-color: hsl(0, 0%, 100%);
+  --c-text-color: hsl(0, 0%, 100%);
+  --c-result-color: hsl(0, 0%, 100%);
+  --c-buttons-color: hsl(221, 14%, 31%);
+  --c-buttons-color-action: hsl(0, 0%, 100%);
+  --c-buttons-color-primary: hsl(0, 0%, 100%);
+
+  --c-background: hsl(222, 26%, 31%);
+  --c-result-background: hsl(224, 36%, 15%);
+  --c-buttons-background: hsl(223, 31%, 20%);
+
+  --c-button-background: hsl(30, 25%, 89%);
+  --c-button-background-hover: hsl(60, 100%, 100%);
+
+  --c-button-background-action: hsl(225, 21%, 49%);
+  --c-button-background-action-hover: hsl(225, 51%, 76%);
+
+  --c-button-background-primary: hsl(6, 63%, 50%);
+  --c-button-background-primary-hover: hsl(6, 93%, 67%);
+
+  --c-button-shadow-color: hsl(28, 16%, 65%);
+  --c-button-shadow-color-action: hsl(224, 28%, 35%);
+  --c-button-shadow-color-primary: hsl(6, 70%, 34%);
+}
+/* #endregion */
+
+/* #region Light theme */
+.theme-light {
+  --c-logo-color: hsl(60, 10%, 19%);
+  --c-text-color: hsl(60, 10%, 19%);
+  --c-result-color: hsl(60, 10%, 19%);
+  --c-buttons-color: hsl(60, 10%, 19%);
+  --c-buttons-color-action: hsl(0, 0%, 100%);
+  --c-buttons-color-primary: hsl(0, 0%, 100%);
+
+  --c-background: hsl(0, 0%, 90%);
+  --c-result-background: hsl(0, 0%, 93%);
+  --c-buttons-background: hsl(0, 5%, 81%);
+
+  --c-button-background: hsl(45, 7%, 89%);
+  --c-button-background-hover: hsl(0, 0%, 100%);
+
+  --c-button-background-action: hsl(185, 42%, 37%);
+  --c-button-background-action-hover: hsl(185, 40%, 56%);
+
+  --c-button-background-primary: hsl(25, 98%, 40%);
+  --c-button-background-primary-hover: hsl(25, 100%, 61%);
+
+  --c-button-shadow-color: hsl(35, 11%, 61%);
+  --c-button-shadow-color-action: hsl(185, 58%, 25%);
+  --c-button-shadow-color-primary: hsl(25, 99%, 27%);
+}
+/* #endregion */
+
+/* #region Contrast theme */
+.theme-contrast {
+  --c-logo-color: hsl(52, 100%, 62%);
+  --c-text-color: hsl(52, 100%, 62%);
+  --c-result-color: hsl(52, 100%, 62%);
+  --c-buttons-color: hsl(52, 100%, 62%);
+  --c-buttons-color-action: hsl(0, 0%, 100%);
+  --c-buttons-color-primary: hsl(198, 20%, 13%);
+
+  --c-background: hsl(268, 75%, 9%);
+  --c-result-background: hsl(268, 71%, 12%);
+  --c-buttons-background: hsl(268, 71%, 12%);
+
+  --c-button-background: hsl(268, 47%, 21%);
+  --c-button-background-hover: hsl(268, 54%, 44%);
+
+  --c-button-background-action: hsl(281, 89%, 26%);
+  --c-button-background-action-hover: hsl(280, 56%, 44%);
+
+  --c-button-background-primary: hsl(176, 100%, 44%);
+  --c-button-background-primary-hover: hsl(176, 100%, 79%);
+
+  --c-button-shadow-color: hsl(290, 70%, 36%);
+  --c-button-shadow-color-action: hsl(285, 91%, 52%);
+  --c-button-shadow-color-primary: hsl(177, 92%, 70%);
+}
+/* #endregion */
+/* #endregion */
+
+body {
+  display: grid;
+  place-items: center;
+
+  font-family: 'Spartan', sans-serif;
+
+  background-color: var(--c-background);
+}
+
+h1 {
+  color: var(--c-logo-color);
+
+  font-size: 2rem;
+}
+
+/* #region Utilities */
+.grid-span-2 {
+  grid-column: span 2;
+}
+
+.calculator {
+  display: grid;
+  grid-gap: 1.5rem;
+
+  width: 327px;
+}
+/* #endregion */
+
+/* #region Theme Switcher */
+.calculator-theme-switcher {
+  display: grid;
+  gap: 3px;
+
+  width: 4.375rem;
+}
+
+/* #region Range input reset */
+
+.calculator-theme-switcher input,
+.calculator-theme-switcher input::-webkit-slider-thumb {
+  appearance: none;
+}
+
+.calculator-theme-switcher input::-ms-track {
+  width: 100%;
+  cursor: pointer;
+
+  /* Hides the slider so custom styles can be added */
+  background: transparent; 
+  border-color: transparent;
+  color: transparent;
+}
+
+.calculator-theme-switcher input:focus {
+  outline: none;
+}
+/* #endregion */
+
+/* #region Range input thumb */
+.calculator-theme-switcher input::-ms-thumb {
+  width: 1rem;
+  height: 1rem;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--c-button-background-primary);
+
+  cursor: pointer;
+}
+
+.calculator-theme-switcher input::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--c-button-background-primary);
+
+  cursor: pointer;
+}
+
+.calculator-theme-switcher input::-webkit-slider-thumb {
+  width: 1rem;
+  height: 1rem;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--c-button-background-primary);
+
+  cursor: pointer;
+}
+
+@media (hover) {
+  .calculator-theme-switcher input::-ms-thumb:hover {
+    background-color: var(--c-button-background-primary-hover);
+  }
+
+  .calculator-theme-switcher input::-moz-range-thumb:hover {
+    background-color: var(--c-button-background-primary-hover);
+  }
+  
+  .calculator-theme-switcher input::-webkit-slider-thumb:hover {
+    background-color: var(--c-button-background-primary-hover);
+  }
+}
+/* #endregion */
+
+.calculator-theme-switcher label {
+  display: flex;
+  justify-content: space-between;
+
+  padding-inline: 10px 5px;
+
+  color: var(--c-text-color);
+}
+
+.calculator-theme-switcher input {
+  width: 100%;
+  height: 1.625rem;
+  padding-inline: 5px;
+
+  border-radius: 13px;
+
+  background-color: var(--c-buttons-background);
+}
+
+/* #endregion */
+
+.calculator-result {
+  padding: 1.75rem 1.5rem;
+  border-radius: 10px;
+
+  color: var(--c-result-color);
+  background-color: var(--c-result-background);
+
+  font-size: 2rem;
+  text-align: right;
+}
+
+.calculator-buttons {
+  display: grid;
+  gap: 13px;
+  grid-template-columns: repeat(4, 1fr);
+
+  padding: 1.5rem;
+  border-radius: 10px;
+
+  background-color: var(--c-buttons-background);
+}
+
+.calculator-buttons button {
+  --cl-shadow-color: var(--c-button-shadow-color);
+  --cl-color: var(--c-buttons-color);
+  --cl-background-color: var(--c-button-background);
+  --cl-background-color-hover: var(--c-button-background-hover);
+  
+  height: 3.75rem;
+
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 3px 0 0 var(--cl-shadow-color);
+
+  font-size: 1.75rem;
+
+  transition: all 150ms cubic-bezier(0.075, 0.820, 0.165, 1.000);;
+
+  color: var(--cl-color);
+  background-color: var(--cl-background-color);
+
+  cursor: pointer;
+}
+
+.calculator-buttons button[data-control] {
+  --cl-shadow-color: var(--c-button-shadow-color-action);
+  --cl-color: var(--c-buttons-color-action);
+  --cl-background-color: var(--c-button-background-action);
+  --cl-background-color-hover: var(--c-button-background-action-hover);
+
+  font-size: 1rem;
+}
+
+.calculator-buttons button[data-control="calculate"] {
+  --cl-shadow-color: var(--c-button-shadow-color-primary);
+  --cl-color: var(--c-buttons-color-primary);
+  --cl-background-color: var(--c-button-background-primary);
+  --cl-background-color-hover: var(--c-button-background-primary-hover);
+}
+
+.calculator-buttons button:active,
+.calculator-buttons button.active {
+  transform: translateY(3px);
+  box-shadow: 0 0 0 0 var(--cl-shadow-color);
+}
+
+@media (hover) {
+  .calculator-buttons button:hover {
+    background-color: var(--cl-background-color-hover);
+  }
+}
+
+/* #region Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+
+  color: var(--c-text-color);
+}
+.attribution a {
+  color: var(--c-button-background-primary);
+}
+/* #endregion */

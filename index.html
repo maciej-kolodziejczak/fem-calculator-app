@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="app.mjs" type="module"></script>
 
     <link
       rel="icon"
@@ -14,16 +23,57 @@
 
     <title>Frontend Mentor | Calculator app</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
+    <div class="calculator" id="calculator">
+      <h1>calc</h1>
+      <div class="calculator-theme-switcher">
+        <label for="theme-switcher">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+        </label>
+        <input
+          type="range"
+          name="theme"
+          id="theme-switcher"
+          min="1"
+          max="3"
+          step="1"
+        />
+      </div>
+
+      <div class="calculator-result">
+        <span data-result></span>
+      </div>
+
+      <div class="calculator-buttons">
+        <button data-number="7" type="button">7</button>
+        <button data-number="8" type="button">8</button>
+        <button data-number="9" type="button">9</button>
+        <button data-control="delete" type="button">DEL</button>
+
+        <button data-number="4" type="button">4</button>
+        <button data-number="5" type="button">5</button>
+        <button data-number="6" type="button">6</button>
+        <button data-operator="+" type="button">+</button>
+
+        <button data-number="1" type="button">1</button>
+        <button data-number="2" type="button">2</button>
+        <button data-number="3" type="button">3</button>
+        <button data-operator="-" type="button">-</button>
+
+        <button data-number="." type="button">.</button>
+        <button data-number="0" type="button">0</button>
+        <button data-operator="/" type="button">/</button>
+        <button data-operator="*" type="button">x</button>
+
+        <button data-control="reset" type="button" class="grid-span-2">
+          RESET
+        </button>
+        <button data-control="calculate" type="button" class="grid-span-2">
+          =
+        </button>
+      </div>
+    </div>
   </head>
   <body>
     <div class="attribution">
